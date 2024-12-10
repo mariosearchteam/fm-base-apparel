@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&display=swap");
+
+/* variables */
+
+$desaturated-red: hsl(0, 36%, 70%);
+$soft-red: hsl(0, 93%, 68%);
+$dark-grayish-red: hsl(0, 6%, 24%);
+$gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+/* typography */
+$fs-body: 14px;
+
+/* fonts */
+$ff-primary: "Josefin Sans", sans-serif;
+$fw-thin: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+/* spacing */
+$spacer-100: 1rem;
+$spacer-50: 0.5rem;
+$spacer-200: 1.5rem;
+$spacer-300: 2rem;
+$spacer-400: 3rem;
+$spacer-500: 4rem;
+$spacer-600: 5rem;
+$spacer-1000: 10rem;
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1.2;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  line-height: 1.6;
+  font-family: $ff-primary;
+  font-size: $fs-body;
+  color: $desaturated-red;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+/* Utility classes */
+.flow-content > * + * {
+  margin-top: var(--flow-space, $spacer-200);
+}
+
+.flow-content--large {
+  --flow-space: 3rem;
+}
+
+.text-accent {
+  color: $desaturated-red;
+  font-weight: $fw-thin;
+}
+
+.container {
+  padding: 0 $spacer-200;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.split {
+  display: flex;
+}
+
+.coming-soon {
+  text-align: center;
+  max-width: 70rem;
+  margin-inline: auto;
+
+  background: $gradient-1;
+  &__header {
+    padding: $spacer-400 $spacer-200;
+  }
+  &__content {
+    margin-top: $spacer-500;
+    margin-bottom: $spacer-500;
+    max-width: 28rem;
+  }
+  &__title {
+    font-size: 2.5rem;
+    color: $dark-grayish-red;
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    line-height: 1.1;
+    max-width: 10ch;
+    margin-inline: auto;
+  }
+  &__picture {
+    display: none;
+  }
+}
+
+.form {
+  position: relative;
+  input {
+    color: $dark-grayish-red;
+    font-family: inherit;
+    padding: calc($spacer-100 - 1px) $spacer-200;
+    background: transparent;
+    border: 1px solid $desaturated-red;
+    border-radius: $spacer-200;
+    width: 100%;
+    &::placeholder {
+      color: lighten($desaturated-red, 10%);
+    }
+  }
+  button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0rem;
+    height: 3rem;
+    padding: $spacer-100 1.6rem;
+    border-radius: $spacer-200;
+    border: none;
+    background: $gradient-2;
+    box-shadow: 0 $spacer-50 $spacer-200 -10px $soft-red;
+    &:hover,
+    &:focus-visible {
+      opacity: 0.8;
+    }
+  }
+  & #error {
+    margin-left: $spacer-200;
+    text-align: left;
+    color: $soft-red;
+    &::after {
+      content: url("./images/icon-error.svg");
+      position: absolute;
+      top: 0.8rem;
+      right: 6rem;
+    }
+  }
+}
+
+@media (min-width: 40rem) {
+  .coming-soon {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: url("./images/bg-pattern-desktop.svg") no-repeat;
+    &__header {
+      margin-left: 5.5rem;
+      padding-left: 0;
+    }
+    &__content {
+    }
+    &__title {
+      margin-left: 0;
+      font-size: 4rem;
+    }
+    &__text {
+      max-width: 44ch;
+    }
+    &__hero-mobile {
+      display: none;
+    }
+    &__picture {
+      display: block;
+      grid-column: 2 / 2;
+      grid-row: 1 / 3;
+    }
+  }
+
+  .form {
+    button {
+      padding: $spacer-100 2.25rem;
+      height: 3.3rem;
+      border-radius: $spacer-300;
+    }
+    input {
+      padding: calc(1rem - 1px) $spacer-300;
+      font-size: 1.1rem;
+      border-radius: $spacer-300;
+    }
+  }
+}
