@@ -129,6 +129,9 @@ body {
   &__picture {
     display: none;
   }
+  &__hero-mobile img {
+    width: 100%;
+  }
 }
 
 .form {
@@ -182,15 +185,15 @@ body {
   }
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 60rem) {
   .coming-soon {
     text-align: left;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: url("./images/bg-pattern-desktop.svg") no-repeat;
     &__header {
-      margin-left: 5.5rem;
-      padding-left: 0;
+      margin: 0 auto;
+      width: 28rem;
     }
     &__content {
     }

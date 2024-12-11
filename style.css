@@ -104,6 +104,9 @@ body {
 .coming-soon__picture {
   display: none;
 }
+.coming-soon__hero-mobile img {
+  width: 100%;
+}
 
 .form {
   position: relative;
@@ -157,7 +160,7 @@ body {
   right: 6rem;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 60rem) {
   .coming-soon {
     text-align: left;
     display: grid;
@@ -165,8 +168,8 @@ body {
     background: url("./images/bg-pattern-desktop.svg") no-repeat;
   }
   .coming-soon__header {
-    margin-left: 5.5rem;
-    padding-left: 0;
+    margin: 0 auto;
+    width: 28rem;
   }
   .coming-soon__title {
     margin-left: 0;
