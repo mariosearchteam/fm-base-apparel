@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Base Apparel coming soon page</title>
-
+<script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 
 </head>
 <body>
@@ -29,7 +29,6 @@
         <form action="" id="form" class="form" novalidate>
           <input class="error" type="email" id="email" placeholder="Email Address" aria-label="Email Address" aria-required="true" required>
           <button type="submit" id="submit"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="20"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/></svg></button>
-          <p id="error" aria-live="polite">Please provide a valid email</p>
         </form>
       </div>
       <div class="coming-soon__picture">
@@ -41,6 +40,6 @@
   </main>
 
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>

@@ -123,6 +123,10 @@ body {
 .form input::placeholder {
   color: #debaba;
 }
+.form input:focus-visible {
+  outline: none;
+  border-color: hsl(0, 93%, 68%);
+}
 .form button {
   display: block;
   position: absolute;
@@ -134,16 +138,19 @@ body {
   border: none;
   background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   box-shadow: 0 0.5rem 1.5rem -10px hsl(0, 93%, 68%);
+  cursor: pointer;
+  transition: all 0.3s;
 }
 .form button:hover, .form button:focus-visible {
   opacity: 0.8;
+  box-shadow: 0 1rem 2rem -10px hsl(0, 93%, 68%);
 }
-.form #error {
+.form #error, .form .just-validate-error-label {
   margin-left: 1.5rem;
   text-align: left;
-  color: hsl(0, 93%, 68%);
+  color: hsl(0, 93%, 68%) !important;
 }
-.form #error::after {
+.form #error::after, .form .just-validate-error-label::after {
   content: url("./images/icon-error.svg");
   position: absolute;
   top: 0.8rem;

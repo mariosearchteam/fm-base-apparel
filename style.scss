@@ -144,6 +144,10 @@ body {
     &::placeholder {
       color: lighten($desaturated-red, 10%);
     }
+    &:focus-visible {
+      outline: none;
+      border-color: $soft-red;
+    }
   }
   button {
     display: block;
@@ -156,15 +160,19 @@ body {
     border: none;
     background: $gradient-2;
     box-shadow: 0 $spacer-50 $spacer-200 -10px $soft-red;
+    cursor: pointer;
+    transition: all 0.3s;
     &:hover,
     &:focus-visible {
       opacity: 0.8;
+      box-shadow: 0 $spacer-100 $spacer-300 -10px $soft-red;
     }
   }
-  & #error {
+  & #error,
+  & .just-validate-error-label {
     margin-left: $spacer-200;
     text-align: left;
-    color: $soft-red;
+    color: $soft-red !important;
     &::after {
       content: url("./images/icon-error.svg");
       position: absolute;
